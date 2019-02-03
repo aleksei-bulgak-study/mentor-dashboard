@@ -9,3 +9,5 @@ const mentors = mentorLoader.load(data);
 let info = studentLoader.load(data, mentors);
 info = tasksLoader.load(data, info);
 storeFile(info, CONST.result);
+
+process.stdout('Finished');
