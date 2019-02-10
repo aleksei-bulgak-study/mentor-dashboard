@@ -1,4 +1,4 @@
-const data = require('./loader/dataLoader.js');
+const { data } = require('./loader/dataLoader.js');
 const mentorLoader = require('./loader/mentor.js');
 const studentLoader = require('./loader/student.js');
 const tasksLoader = require('./loader/tasks.js');
@@ -10,4 +10,4 @@ let info = studentLoader.load(data, mentors);
 info = tasksLoader.load(data, info);
 storeFile(info, CONST.result);
 
-process.stdout('Finished');
+process.stdout.write('Finished');

@@ -12,7 +12,7 @@ function loadJSON(filePath, dir) {
 }
 
 function loadXLSX(filePath, dir) {
-  return parse(loadFile(filePath, dir));
+  return parse(loadFile(filePath, dir), { cellDates: true });
 }
 
 const configuration = loadJSON(CONST.config);
@@ -22,4 +22,5 @@ Object.keys(configuration.files).forEach((fileName) => {
   dataFiles[fileName] = loadXLSX(configuration.files[fileName], CONST.dataDir);
 });
 
-module.exports = dataFiles;
+module.exports.loadJSON = loadJSON;
+module.exports.data = dataFiles;

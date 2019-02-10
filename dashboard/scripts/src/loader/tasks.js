@@ -1,4 +1,7 @@
 const { CONST } = require('../constants.js');
+const { loadJSON } = require('./dataLoader');
+
+const config = loadJSON(CONST.config);
 
 class TasksLoader {
   load(data, mentors) {
@@ -10,14 +13,30 @@ class TasksLoader {
   populateTasks(data) {
     this.result.tasks = [];
     data
-      .filter(info => info[0] && info[1] && info[2])
+      .filter(info => info[0] && info[2])
       .forEach((task) => {
-        const [name, link, status] = task;
+        const [name, link, status] = this.fixMistakes(task);
         this.result.tasks.push({
-          name, link, status,
+          link,
+          status,
+          name: name.trim(),
         });
       });
     return this.result;
+  }
+
+  fixMistakes(task) {
+    const [, link] = task;
+    let [name, , status] = task;
+    config.replacements.forEach((replacement) => {
+      if (name.trim() === replacement.from) {
+        name = replacement.to;
+      }
+      if (status.trim() === replacement.from) {
+        status = replacement.to;
+      }
+    });
+    return [name, link, status];
   }
 }
 

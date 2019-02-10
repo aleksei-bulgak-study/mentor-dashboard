@@ -19,7 +19,7 @@ class MentorLoader {
         this.mentors[fullName] = {
           firstName: mentor[0],
           lastName: mentor[1],
-          github: mentor[4],
+          github: mentor[4].toLowerCase(),
           city: mentor[2],
           students: [],
           studentsInfo: [],
@@ -37,8 +37,8 @@ class MentorLoader {
           mentor.students.push(pair[1]);
         } else {
           notParsedPairs.push({
-            mentor: pair[0],
-            student: pair[1],
+            mentor: pair[0].toLowerCase(),
+            student: pair[1].toLowerCase(),
           });
         }
       });

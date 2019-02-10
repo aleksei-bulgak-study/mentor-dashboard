@@ -3,5 +3,15 @@
     "mentor": "Mentor score.xlsx",
     "mentor-student": "Mentor-students pairs.xlsx",
     "tasks": "Tasks.xlsx"
-  }
+  },
+  "replacements": [
+    {
+      "from": "CodeJam \"Scoreboard\"",
+      "to": "Code Jam \"Scoreboard\""
+    },
+    {
+      "from": "RS Activist -",
+      "to": "RS Activist"
+    }
+  ]
 }

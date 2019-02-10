@@ -29,7 +29,8 @@ class StudentLoader {
   convertMentors(mentors) {
     this.mentorsMapping = {};
     Object.keys(mentors).forEach((key) => {
-      const { github } = mentors[key];
+      let { github } = mentors[key];
+      github = github.toLowerCase();
       this.mentorsMapping[github] = mentors[key];
     });
   }
@@ -39,8 +40,8 @@ class StudentLoader {
     this.valid = data.slice(1)
       .filter(info => info[0] && info[1] && info[2])
       .map((info) => {
-        info[order.STUDENT] = info[order.STUDENT].trim();
-        info[order.MENTOR] = info[order.MENTOR].trim();
+        info[order.STUDENT] = info[order.STUDENT].toLowerCase().trim();
+        info[order.MENTOR] = info[order.MENTOR].toLowerCase().trim();
         info[order.PR] = info[order.PR].trim();
         return info;
       })
@@ -64,7 +65,7 @@ class StudentLoader {
     this.students = {};
     this.valid
       .forEach((info) => {
-        const student = this.students[info[order.STUDENT].trim()];
+        const student = this.students[info[order.STUDENT].toLowerCase().trim()];
         const task = {
           task: info[order.TASK].trim(),
           pr: info[order.PR].trim(),
@@ -77,8 +78,8 @@ class StudentLoader {
         if (student) {
           student.tasks[info[order.TASK].trim()] = task;
         } else {
-          this.students[info[order.STUDENT].trim()] = {
-            github: info[order.STUDENT].trim(),
+          this.students[info[order.STUDENT].toLowerCase().trim()] = {
+            github: info[order.STUDENT].toLowerCase().trim(),
             tasks: { [task.task]: task },
           };
         }
@@ -91,7 +92,7 @@ class StudentLoader {
       const mentor = this.mentorsMapping[mentorsGH];
       const { students } = mentor;
       students.forEach((student) => {
-        const gh = ghPrefix + student;
+        const gh = (ghPrefix + student).toLowerCase();
         const studentInfo = this.students[gh];
         if (studentInfo) {
           mentor.studentsInfo.push(studentInfo);

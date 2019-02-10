@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint -c .eslintrc.json ./src/**/*.js",
-    "start": "node ./src/index.js"
+    "start": "node ./src/index.js",
+    "build": "node ./src/index.js"
   },
   "author": "Aleksei Bulgak <aleksei.bulgak@gmail.com>",
   "license": "MIT",
