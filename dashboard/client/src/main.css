@@ -1,0 +1,23 @@
+body {
+  background-color: #dadada;
+  font: 1em sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  margin: 0 auto;
+  max-width: 90%;
+  font-size: 1.5em;
+}
+
+@media only screen and (max-width: 650px) {
+  #root {
+    max-width: 100%;
+    margin: 2% 2%;
+    overflow-x: auto;
+    font-size: 1em;
+  }
+}

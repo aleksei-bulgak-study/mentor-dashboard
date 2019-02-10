@@ -1,0 +1,65 @@
+.student-results {
+  margin: 0 auto;
+}
+
+.student-results__table {
+  border-collapse: collapse;
+  overflow:hidden;
+  width:100%;
+  margin:0 auto;
+  position:relative;
+  background-color: #dadada;
+}
+
+td {
+  text-align: center;
+  padding: 1% 1%;
+  max-width: 300px;
+  box-sizing: border-box;
+  border:2px solid #9ea7af;
+}
+
+th, td:first-child {
+  color:#D5DDE5;
+  background:#3d5990;
+  border: 2px solid #9ea7af;
+  font-size:1em;
+  font-weight: 100;
+  padding: 1% 1%;
+  text-shadow: 0 1px 1px #0000001a;
+  vertical-align: middle;
+}
+
+th > a, td:first-child > a {
+  color: azure;
+}
+
+td:first-child {
+  text-align: left;
+}
+
+td.green {
+  background-color: green;
+}
+
+td.red {
+  background-color: red;
+}
+
+td.gray {
+  background-color: gray;
+}
+
+td.pink {
+  background-color: pink;
+}
+
+td.yellow {
+  background-color: orange;
+}
+
+a.student-results__score {
+  color: black;
+  font-weight: bold;
+  width: 100%;
+}
