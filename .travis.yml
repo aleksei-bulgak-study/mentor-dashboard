@@ -9,7 +9,7 @@ branches:
     - gh-pages
 
 before_install:
-  - cd server/
+  - cd dashboard/scripts/
   - npm install && npm run build
   - cp ./results/mentors.json ../client/assets/mentors.json
   - cd ../client/
@@ -22,7 +22,7 @@ script:
   - npm run build
 
 deploy:
-  local-dir: ./client/dist
+  local-dir: ./dashboard/client/dist
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
