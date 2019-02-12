@@ -4,10 +4,10 @@
 
 .student-results__table {
   border-collapse: collapse;
-  overflow:hidden;
-  width:100%;
-  margin:0 auto;
-  position:relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
   background-color: #dadada;
 }
 
@@ -16,21 +16,21 @@ td {
   padding: 1% 1%;
   max-width: 300px;
   box-sizing: border-box;
-  border:2px solid #9ea7af;
+  border: 1px solid #ababab;
 }
 
 th, td:first-child {
-  color:#D5DDE5;
-  background:#3d5990;
+  color: #d5dde5;
+  background: #516fa9;
   border: 2px solid #9ea7af;
-  font-size:1em;
+  font-size: 1em;
   font-weight: 100;
   padding: 1% 1%;
   text-shadow: 0 1px 1px #0000001a;
   vertical-align: middle;
 }
 
-th > a, td:first-child > a {
+th>a, td:first-child>a {
   color: azure;
 }
 
@@ -39,15 +39,15 @@ td:first-child {
 }
 
 td.green {
-  background-color: green;
+  background-color: #36ac36;
 }
 
 td.red {
-  background-color: red;
+  background-color: #ff3e3e;
 }
 
 td.gray {
-  background-color: gray;
+  background-color: #9d9d9d;
 }
 
 td.pink {
@@ -55,11 +55,10 @@ td.pink {
 }
 
 td.yellow {
-  background-color: orange;
+  background-color: #fabf53;
 }
 
 a.student-results__score {
-  color: black;
-  font-weight: bold;
+  color: #474747;
   width: 100%;
 }
