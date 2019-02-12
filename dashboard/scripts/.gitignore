@@ -1,2 +1,3 @@
 results/*.json
 errors/*.json
+#docs/*.xlsx
