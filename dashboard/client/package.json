@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open --hot",
-    "test": "jest",
+    "test": "jest --no-cache --coverage --config jest.config.json",
     "lint": "eslint -c .eslintrc.json ./src/**/*.js ./src/**/*.jsx"
   },
   "author": "Aleksei Bulgak <aleksei.bulgak@gmail.com>",
@@ -24,6 +24,9 @@
     "clean-webpack-plugin": "^1.0.1",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^2.1.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "enzyme-to-json": "^3.3.5",
     "eslint": "^5.13.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.2",

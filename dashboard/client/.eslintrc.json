@@ -6,6 +6,15 @@
   },
   "rules": {
     "react/prefer-stateless-function": "off",
-    "class-methods-use-this":"off"
+    "class-methods-use-this": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ]
   }
 }

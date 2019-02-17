@@ -5,7 +5,8 @@ import constants from '../constants';
 
 const getColorForTask = (status, result) => {
   let state = constants.status.default;
-  const statusInfo = constants.statuses[status];
+  const statusInfo = constants.statuses[status]
+    ? constants.statuses[status] : constants.statuses.ToDo;
   if (!result && statusInfo.isReady) {
     state = constants.status.failed;
   }

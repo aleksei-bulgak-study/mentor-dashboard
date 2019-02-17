@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableRow default snapshot 1`] = `
+<tr>
+  <td
+    key="test"
+  >
+    <a
+      href="https://example.com/test"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      test
+    </a>
+  </td>
+  <TaskResultsContainer
+    results={
+      Array [
+        Object {
+          "github": "https://github.com/student1",
+          "tasks": Object {
+            "test": Object {
+              "mark": 100,
+              "pr": "https://example.com/task",
+            },
+            "test2": Object {
+              "mark": 30,
+              "pr": "https://example.com/task2",
+            },
+          },
+        },
+      ]
+    }
+    students={
+      Array [
+        "student1",
+        "student2",
+      ]
+    }
+    task={
+      Object {
+        "link": "https://example.com/test",
+        "name": "test",
+        "status": "Checking",
+      }
+    }
+  />
+</tr>
+`;

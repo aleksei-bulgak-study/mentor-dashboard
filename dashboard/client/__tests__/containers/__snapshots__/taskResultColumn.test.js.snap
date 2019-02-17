@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskResultColumn test snapshot does not changed 1`] = `
+<TableItem
+  color="green"
+  link=""
+  mark={145}
+/>
+`;
+
+exports[`TaskResultColumn test snapshot does not changed when result is empty 1`] = `
+<TableItem
+  color="pink"
+  link="#"
+  mark={0}
+/>
+`;
+
+exports[`TaskResultColumn test snapshot does not changed when status is invalid 1`] = `
+<TableItem
+  color="green"
+  link="https://example.com"
+  mark={145}
+/>
+`;
+
+exports[`TaskResultColumn test snapshot does not changed when work is in progress 1`] = `
+<TableItem
+  color="yellow"
+  link="#"
+  mark={0}
+/>
+`;

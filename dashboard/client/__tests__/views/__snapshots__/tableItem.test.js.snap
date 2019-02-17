@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableItem should match snapshot 1`] = `
+<td
+  className="green"
+  title={95}
+>
+  <a
+    className="student-results__score"
+    href="https://example.com"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    95
+  </a>
+</td>
+`;
+
+exports[`TableItem should match snapshot when link is missed 1`] = `
+<td
+  className="green"
+  title={95}
+>
+  <a
+    className="student-results__score"
+    href="https://example.com"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    95
+  </a>
+</td>
+`;
