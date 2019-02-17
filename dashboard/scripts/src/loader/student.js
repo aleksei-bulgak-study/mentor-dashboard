@@ -30,8 +30,10 @@ class StudentLoader {
     this.mentorsMapping = {};
     Object.keys(mentors).forEach((key) => {
       let { github } = mentors[key];
-      github = github.toLowerCase();
-      this.mentorsMapping[github] = mentors[key];
+      if (github) {
+        github = github.toLowerCase();
+        this.mentorsMapping[github] = mentors[key];
+      }
     });
   }
 

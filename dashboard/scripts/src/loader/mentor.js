@@ -17,8 +17,8 @@ class MentorLoader {
       .forEach((mentor) => {
         const fullName = `${mentor[0].trim()} ${mentor[1].trim()}`;
         this.mentors[fullName] = {
-          firstName: mentor[0],
-          lastName: mentor[1],
+          firstName: mentor[0].trim(),
+          lastName: mentor[1].trim(),
           github: mentor[4].toLowerCase(),
           city: mentor[2],
           students: [],
