@@ -3,6 +3,7 @@ import SearchComponent from './views/search';
 import TableContainer from './views/table';
 import data from '../assets/mentors.json';
 import './main.css';
+import GitHubOAuthLogin from './views/login';
 
 const CONST = {
   SELECTED: 'rss-dashboard-selected-mentor',
@@ -32,6 +33,7 @@ class Main extends React.Component {
       selected,
     };
     this.onSelect = this.onSelect.bind(this);
+    this.onLogin = this.onLogin.bind(this);
   }
 
   onSelect(selected) {
@@ -41,10 +43,21 @@ class Main extends React.Component {
     this.setState({ selected });
   }
 
+  onLogin(nickname) {
+    const mentor = this.data.mentors[nickname.toLowerCase()];
+    if (mentor) {
+      this.onSelect({
+        label: nickname,
+        value: mentor.github,
+      });
+    }
+  }
+
   render() {
     const { selected } = this.state;
     return (
       <React.Fragment>
+        <GitHubOAuthLogin onLogin={this.onLogin} />
         <h1>Mentor Dashboard</h1>
         <SearchComponent
           data={data}
