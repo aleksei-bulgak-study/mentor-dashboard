@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const DATA = {
   authorize: 'https://github.com/login/oauth/authorize',
-  userName: 'http://localhost:8080/login',
+  userName: 'https://rss-mentor-dashboard-login.herokuapp.com/login',
   accessKey: 'bcf0a6cf1918c0481c37',
   scope: 'read:user',
   codePattern: /(.+)\?code=(.*)&state/,
