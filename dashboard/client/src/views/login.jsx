@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 
 const DATA = {
   authorize: 'https://github.com/login/oauth/authorize',
-  accessToken: 'https://github.com/login/oauth/access_token',
-  user: 'https://api.github.com/user',
-  uuid1: '0bebaf4ab40e810c3a38',
-  uuid2: 'b504b6e5398940b0d10529e602eb758dc2df9f1d',
+  userName: 'http://localhost:8080/login',
+  accessKey: 'bcf0a6cf1918c0481c37',
   scope: 'read:user',
   codePattern: /(.+)\?code=(.*)&state/,
 };
@@ -14,9 +12,6 @@ const DATA = {
 class GitHubOAuthLogin extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      login: null,
-    };
     this.onLogin = props.onLogin;
   }
 
@@ -28,28 +23,24 @@ class GitHubOAuthLogin extends Component {
   }
 
   loadUserInfo(clientId) {
-    const url = `${DATA.accessToken}?client_id=${DATA.uuid1}&client_secret=${DATA.uuid2}&code=${clientId}`;
+    const url = `${DATA.userName}/${clientId}`;
     fetch(url)
-      .then(response => response.text)
-      .then(data => fetch(`${DATA.user}?${data}`))
-      .then(response => response.json())
-      .then((data) => {
-        console.log(data);
-        return data.login;
-      })
+      .then(response => response.text())
       .then((login) => {
-        this.setState({ login });
-        this.onLogin(login);
+        if (login) {
+          this.onLogin(login);
+        }
       });
   }
 
   render() {
-    const { login } = this.state;
     const uuid = Math.random().toString(36).substring(7);
-    const url = `${DATA.authorize}?client_id=${DATA.uuid1}&scope=${DATA.scope}&state=${uuid}}`;
+    const url = `${DATA.authorize}?client_id=${DATA.accessKey}&scope=${DATA.scope}&state=${uuid}}`;
     return (
       <React.Fragment>
-        {!login && <a href={url}>Authorize with Github</a>}
+        <a href={url} className="login">
+          <img src="../../assets/img/logo.png" height="30" alt="Authorize via Github" />
+        </a>
       </React.Fragment>
     );
   }

@@ -36,6 +36,7 @@ class SearchContainer extends Component {
         <Select
           options={mentors}
           defaultValue={selected}
+          value={selected}
           onChange={onSelect}
         />
       </div>

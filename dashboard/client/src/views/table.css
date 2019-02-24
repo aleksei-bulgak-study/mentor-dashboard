@@ -15,6 +15,8 @@ td {
   text-align: center;
   max-width: 300px;
   border: 1px solid #ababab;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 th, td:first-child {
@@ -25,11 +27,13 @@ th, td:first-child {
   font-weight: 100;
   padding: 1% 1%;
   text-shadow: 0 1px 1px #0000001a;
+  text-align: center;
   vertical-align: middle;
 }
 
 th>a, td:first-child>a {
   color: azure;
+  overflow: hidden;
 }
 
 td:first-child {
@@ -60,4 +64,5 @@ a.student-results__score {
   width: 100%;
   display: inline-block;
   color: #474747;
+  display: none;
 }

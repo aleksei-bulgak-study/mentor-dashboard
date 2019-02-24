@@ -33,6 +33,10 @@ module.exports = {
         from: './assets/mentors.json',
         to: '../dist/assets/mentors.json',
       },
+      {
+        from: './assets/img/',
+        to: '../dist/assets/img/',
+      },
     ]),
     new HtmlWebpackPlugin({
       title: 'Mentor Dashboard',

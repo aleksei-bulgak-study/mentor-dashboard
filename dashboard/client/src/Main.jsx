@@ -44,11 +44,12 @@ class Main extends React.Component {
   }
 
   onLogin(nickname) {
-    const mentor = this.data.mentors[nickname.toLowerCase()];
+    const mentor = Object.keys(data.mentors)
+      .filter(key => data.mentors[key].github.includes(nickname.toLowerCase()))[0];
     if (mentor) {
       this.onSelect({
-        label: nickname,
-        value: mentor.github,
+        label: mentor,
+        value: data.mentors[mentor].github,
       });
     }
   }
@@ -57,8 +58,10 @@ class Main extends React.Component {
     const { selected } = this.state;
     return (
       <React.Fragment>
+        <h1>
+          Mentor Dashboard
+        </h1>
         <GitHubOAuthLogin onLogin={this.onLogin} />
-        <h1>Mentor Dashboard</h1>
         <SearchComponent
           data={data}
           selected={selected}
