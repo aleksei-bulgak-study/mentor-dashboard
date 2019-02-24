@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const DATA = {
   authorize: 'https://github.com/login/oauth/authorize',
   userName: 'https://rss-mentor-dashboard-login.herokuapp.com/login',
-  accessKey: 'bcf0a6cf1918c0481c37',
+  accessKey: '0bebaf4ab40e810c3a38',
   scope: 'read:user',
   codePattern: /(.+)\?code=(.*)&state/,
 };
