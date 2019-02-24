@@ -31,6 +31,8 @@ class Main extends React.Component {
     const selected = Main.getDefaultMentor();
     this.state = {
       selected,
+      failed: false,
+      login: null,
     };
     this.onSelect = this.onSelect.bind(this);
     this.onLogin = this.onLogin.bind(this);
@@ -40,7 +42,7 @@ class Main extends React.Component {
     if (data.mentors[selected.label]) {
       Main.saveDefaultMentor(selected);
     }
-    this.setState({ selected });
+    this.setState({ selected, failed: false });
   }
 
   onLogin(nickname) {
@@ -51,17 +53,35 @@ class Main extends React.Component {
         label: mentor,
         value: data.mentors[mentor].github,
       });
+      this.setState({ failed: false });
+    } else {
+      this.setState({
+        login: nickname,
+        failed: true,
+      });
     }
   }
 
   render() {
-    const { selected } = this.state;
+    const { selected, failed, login } = this.state;
     return (
       <React.Fragment>
         <h1>
           Mentor Dashboard
         </h1>
         <GitHubOAuthLogin onLogin={this.onLogin} />
+        {
+          failed === true
+          && (
+            <p className="login--failed">
+              Sorry user with nickname
+              {' '}
+              {login}
+              {' '}
+              not found
+            </p>
+          )
+        }
         <SearchComponent
           data={data}
           selected={selected}

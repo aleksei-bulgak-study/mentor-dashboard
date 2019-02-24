@@ -21,6 +21,11 @@ h1 {
   height: 1em;
 }
 
+.login--failed {
+  margin: 0 0;
+  color: red;
+}
+
 #root {
   margin: 0 auto;
   max-width: 90%;
