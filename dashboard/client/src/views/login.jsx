@@ -39,7 +39,7 @@ class GitHubOAuthLogin extends Component {
     return (
       <React.Fragment>
         <a href={url} className="login">
-          <img src="../../assets/img/logo.png" height="30" alt="Authorize via Github" />
+          <img src="https://image.flaticon.com/icons/png/512/25/25231.png" height="30" alt="Authorize via Github" />
         </a>
       </React.Fragment>
     );
