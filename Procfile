@@ -1,1 +1,1 @@
-web node dashboard/server/index.js
+web node index.js
