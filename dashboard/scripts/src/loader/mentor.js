@@ -13,7 +13,7 @@ class MentorLoader {
     this.mentors = {};
     const mentorsData = data.slice(1);
     mentorsData
-      .filter(mentor => mentor[0] && mentor[1] && mentor[4] && mentor[3] > 0)
+      .filter((mentor) => mentor[0] && mentor[1] && mentor[4] && mentor[3] > 0)
       .forEach((mentor) => {
         const fullName = `${mentor[0].trim()} ${mentor[1].trim()}`;
         this.mentors[fullName] = {
@@ -30,7 +30,7 @@ class MentorLoader {
   populateStudentsArray(data) {
     const notParsedPairs = [];
     data.slice(1)
-      .filter(pair => pair[0] && pair[1])
+      .filter((pair) => pair[0] && pair[1])
       .forEach((pair) => {
         const mentor = this.mentors[pair[0]];
         if (mentor) {

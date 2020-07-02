@@ -40,7 +40,7 @@ class StudentLoader {
   filterData(data) {
     const failed = [];
     this.valid = data.slice(1)
-      .filter(info => info[0] && info[1] && info[2])
+      .filter((info) => info[0] && info[1] && info[2])
       .map((info) => {
         info[order.STUDENT] = info[order.STUDENT].toLowerCase().trim();
         info[order.MENTOR] = info[order.MENTOR].toLowerCase().trim();

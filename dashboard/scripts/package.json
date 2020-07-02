@@ -12,13 +12,13 @@
   "author": "Aleksei Bulgak <aleksei.bulgak@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^5.12.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.15.0",
-    "jest": "^24.1.0"
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.1.0"
   },
   "dependencies": {
-    "node-xlsx": "^0.12.1",
-    "validator": "^10.11.0"
+    "node-xlsx": "^0.15.0",
+    "validator": "^13.1.1"
   }
 }

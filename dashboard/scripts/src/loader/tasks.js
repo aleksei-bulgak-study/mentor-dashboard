@@ -13,7 +13,7 @@ class TasksLoader {
   populateTasks(data) {
     this.result.tasks = [];
     data
-      .filter(info => info[0] && info[2])
+      .filter((info) => info[0] && info[2])
       .forEach((task) => {
         const [name, link, status] = this.fixMistakes(task);
         this.result.tasks.push({
