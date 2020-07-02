@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -27,17 +27,19 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin('dist'),
-    new CopyWebpackPlugin([
-      {
-        from: './assets/mentors.json',
-        to: '../dist/assets/mentors.json',
-      },
-      {
-        from: './assets/img/',
-        to: '../dist/assets/img/',
-      },
-    ]),
+    new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: './assets/mentors.json',
+          to: '../dist/assets/mentors.json',
+        },
+        {
+          from: './assets/img/',
+          to: '../dist/assets/img/',
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       title: 'Mentor Dashboard',
       template: 'public/index.html',
