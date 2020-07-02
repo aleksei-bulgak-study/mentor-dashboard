@@ -27,10 +27,6 @@ app.get('/login/:clientId',
 
     const data = await fetch(url)
       .then(response => response.text())
-      .then(data => {
-        console.log(data);
-        return data;
-      })
       .then(data => fetch(`${user}?${data}`))
       .then(response => response.json())
       .then(data => data.login);
